@@ -1,5 +1,7 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
 import { defineConfig } from 'drizzle-kit';
+
+dotenv.config({ path: './.env.local', override: true });
 
 export default defineConfig({
   out: './drizzle',
@@ -8,7 +10,7 @@ export default defineConfig({
   ],
   dialect: 'turso',
   dbCredentials: {
-    url: "http://127.0.0.1:8080",
-    authToken: "xxx",
+    url: process.env.TURSO_DATABASE_URL as string,
+    authToken: process.env.TURSO_AUTH_TOKEN as string,
   },
 });
