@@ -39,7 +39,7 @@ To start the database, you need to run the following command:
 turso dev
 ```
 
-This will start the database in development mode. To more details about turso, you can check the [turso documentation](https://turso.tech/docs/getting-started/installation).
+This will start the database in development mode. To more details about turso, you can check the [turso documentation](https://docs.turso.tech/introduction).
 
 
 **Database generation and migration**
