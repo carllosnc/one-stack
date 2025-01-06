@@ -13,21 +13,25 @@
 
 ## First steps
 
-Before you start, you need to create a `.env` file in the root of the project and add the following variables:
+Before you start, you need to create a `.env.local` file in the root of the project and add the following variables:
 
+turso database connection
 ```
-//turso database connection
 TURSO_DATABASE_URL=""
 TURSO_AUTH_TOKEN=""
-
-//auth.js config
-AUTH_DRIZZLE_URL=http://localhost:3000/api/auth/callback/google
+```
+auth.js config
+```
+AUTH_DRIZZLE_URL=""
 AUTH_SECRET=""
-
-//google auth config
+```
+google auth config
+```
 AUTH_GOOGLE_ID=""
 AUTH_GOOGLE_SECRET=""
 ```
+
+Google auth is the default auth provider.
 
 ## Development
 
