@@ -1,22 +1,9 @@
-import { auth } from "@/auth"
-
-async function UserAvatar() {
-  const session = await auth()
-
-  if (!session?.user) return null
-
-  return (
-    <div>
-      {session.user.name}
-    </div>
-  )
-}
+import { Header } from "@/components/home/header"
 
 export default async function Home() {
   return (
-    <div>
-      <UserAvatar />
-      hello world!!!
+    <div className="w-full min-h-screen flex flex-col">
+      <Header />
     </div>
   )
 }
