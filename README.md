@@ -1,3 +1,5 @@
+[![One Stack](https://github.com/carllosnc/one-stack/actions/workflows/bun.yml/badge.svg)](https://github.com/carllosnc/one-stack/actions/workflows/bun.yml)
+
 # 🍎 One Stack
 
 >fast way to prototype full stack apps with Next.js, React, Tailwind, and Drizzle ORM
@@ -48,7 +50,7 @@ This will start the database in development mode. To more details about turso, y
 
 **Database generation and migration**
 
-To generate the database schema and run the migration, you need to run the following command:
+To generate the database schema and run the migration, you need to run the following commands:
 
 Generation
 ```bash
@@ -64,7 +66,7 @@ The commands are abstraction of drizzle-kit commands, you can check the [drizzle
 
 **Server**
 
-To start the server, you need to run the following command:
+To start the server:
 
 ```bash
 bun run dev
@@ -72,7 +74,7 @@ bun run dev
 
 ## Test
 
-To run the tests, you need to run the following command:
+To run the tests:
 
 ```bash
 bun run test
