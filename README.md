@@ -15,17 +15,17 @@
 
 Before you start, you need to create a `.env.local` file in the root of the project and add the following variables:
 
-turso database connection
+**Turso database connection**
 ```
 TURSO_DATABASE_URL=""
 TURSO_AUTH_TOKEN=""
 ```
-auth.js config
+**Auth.js config**
 ```
 AUTH_DRIZZLE_URL=""
 AUTH_SECRET=""
 ```
-google auth config
+**Google auth config**
 ```
 AUTH_GOOGLE_ID=""
 AUTH_GOOGLE_SECRET=""
@@ -78,7 +78,7 @@ To run the tests, you need to run the following command:
 bun run test
 ```
 
-This is is configured to run with the correct environment variables file.
+This commands is configured to run with the correct environment variables file.
 
 ---
 
