@@ -70,6 +70,16 @@ To start the server, you need to run the following command:
 bun run dev
 ```
 
+## Test
+
+To run the tests, you need to run the following command:
+
+```bash
+bun run test
+```
+
+This is is configured to run with the correct environment variables file.
+
 ---
 
 Carlos Costa @ 2025
