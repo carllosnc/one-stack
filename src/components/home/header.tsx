@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/mode-toggle"
 import {
   Avatar,
   AvatarFallback,
@@ -67,11 +68,12 @@ export async function Header() {
   }
 
   return (
-    <header className="w-full flex justify-center items-center h-[62px] px-6 border-b border-zinc-200">
+    <header className="w-full flex justify-center items-center h-[62px] px-6 border-b border-zinc-200 dark:border-zinc-800">
       <div className="w-full max-w-[1200px] justify-between mx-auto h-full flex items-center">
-        <h1 className="text-zinc-800 font-bold tracking-widest">ONE STACK</h1>
+        <h1 className="text-zinc-800 dark:text-zinc-500 font-bold tracking-widest">ONE STACK</h1>
 
-        <div>
+        <div className="flex gap-[10px]">
+          <ModeToggle />
           {loginButton()}
         </div>
       </div>
