@@ -4,7 +4,7 @@ export default async function Dashboard() {
   await checkSession()
 
   return (
-    <div>
+    <div className="w-full min-h-screen flex flex-col justify-center items-center">
       <h1>Dashboard</h1>
     </div>
   )
