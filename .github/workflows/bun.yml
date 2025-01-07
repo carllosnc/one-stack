@@ -31,10 +31,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: 'Create .env.local file'
-        run: |
-          touch .env.local
-          echo TURSO_DATABASE_URL=${{ secrets.TURSO_DATABASE_URL }} >> .env.local
+      - name: Create .env.local file
+        run: touch .env.local && echo TURSO_DATABASE_URL=${{ secrets.TURSO_DATABASE_URL }} >> .env.local
 
       - name: Run linter
         run: bun run lint
