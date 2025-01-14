@@ -19,8 +19,8 @@ Before you start, you need to create a `.env.local` file in the root of the proj
 
 **Turso database connection**
 ```
-TURSO_DATABASE_URL=""
-TURSO_AUTH_TOKEN=""
+NEXT_PUBLIC_TURSO_DATABASE_URL=""
+NEXT_PUBLIC_TURSO_AUTH_TOKEN=""
 ```
 **Auth.js config**
 ```
