@@ -4,8 +4,8 @@ import { drizzle } from "drizzle-orm/libsql"
 import type { AdapterAccountType } from "next-auth/adapters"
 
 const client = createClient({
-  url: process.env.TURSO_DATABASE_URL as string,
-  authToken: process.env.TURSO_AUTH_TOKEN as string,
+  url: process.env.NEXT_PUBLIC_TURSO_DATABASE_URL as string,
+  authToken: process.env.NEXT_PUBLIC_TURSO_DATABASE_URL as string,
 })
 
 export const db = drizzle(client)
