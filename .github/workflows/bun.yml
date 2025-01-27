@@ -32,7 +32,7 @@ jobs:
         run: bun install
 
       - name: Create .env.local file
-        run: touch .env.local && echo TURSO_DATABASE_URL=${{ secrets.TURSO_DATABASE_URL }} >> .env.local
+        run: touch .env.local && echo NEXT_PUBLIC_TURSO_DATABASE_URL=${{ secrets.NEXT_PUBLIC_TURSO_DATABASE_URL }} >> .env.local
 
       - name: Run linter
         run: bun run lint
