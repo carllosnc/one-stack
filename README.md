@@ -1,6 +1,6 @@
 [![One Stack](https://github.com/carllosnc/one-stack/actions/workflows/bun.yml/badge.svg)](https://github.com/carllosnc/one-stack/actions/workflows/bun.yml)
 
-# 🍎 One Stack
+# One Stack
 
 >fast way to prototype full stack apps with Next.js, React, Tailwind, and Drizzle ORM
 
@@ -12,6 +12,7 @@
 - Drizzle ORM
 - Auth.js
 - Bun
+- Shadcn/ui
 
 ## First steps
 
