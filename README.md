@@ -54,15 +54,20 @@ To generate the database schema and run the migration, you need to run the follo
 
 Generation
 ```bash
-bun run generate
+bun run db:generate
 ```
 
 Migration
 ```bash
-bun run migrate
+bun run db:migrate
 ```
 
-The commands are abstraction of drizzle-kit commands, you can check the [drizzle-kit documentation](https://orm.drizzle.team/docs/kit-overview) for more details.
+Drizzle studio
+```bash
+bun run db:studio
+```
+
+The commands above are abstraction of drizzle-kit commands, you can check the [drizzle-kit documentation](https://orm.drizzle.team/docs/kit-overview) for more details.
 
 **Server**
 
