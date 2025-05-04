@@ -10,9 +10,8 @@ import {
   updateTodo,
   deleteTodo
 } from "@/data/db-actions/todo-action";
-import { InsertTodo } from "@/data/db-schemas/todo-schema";
+import { DeleteTodo, UpdateTodo } from "@/data/db-schemas/todo-schema";
 
-// Fetch all todos
 export function useTodos(userId: string) {
   return useQuery({
     queryKey: ["todos", userId],
@@ -20,7 +19,6 @@ export function useTodos(userId: string) {
   });
 }
 
-// Fetch a single todo by ID
 export function useTodo(id: number, userId: string) {
   return useQuery({
     queryKey: ["todo", id],
@@ -29,7 +27,6 @@ export function useTodo(id: number, userId: string) {
   });
 }
 
-// Create a new todo
 export function useCreateTodo() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -42,11 +39,10 @@ export function useCreateTodo() {
   });
 }
 
-// Update a todo by ID
 export function useUpdateTodo() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, userId, updates }: { id: number; userId: string; updates: Partial<InsertTodo> }) =>
+    mutationFn: ({ id, userId, updates }: UpdateTodo) =>
       updateTodo(id, userId, updates),
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -59,11 +55,10 @@ export function useUpdateTodo() {
   });
 }
 
-// Delete a todo by ID
 export function useDeleteTodo() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, userId }: { id: number; userId: string }) => deleteTodo(id, userId),
+    mutationFn: ({ id, userId }: DeleteTodo) => deleteTodo(id, userId),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["todos"],
