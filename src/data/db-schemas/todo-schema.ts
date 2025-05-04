@@ -13,3 +13,5 @@ export const todos = sqliteTable("todos", {
 
 export type InsertTodo = typeof todos.$inferInsert
 export type SelectTodo = typeof todos.$inferSelect
+export type UpdateTodo = { id: number; userId: string; updates: Partial<InsertTodo> }
+export type DeleteTodo = { id: number; userId: string }
