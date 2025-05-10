@@ -1,5 +1,5 @@
-import { db } from "@/database"; // Import your Drizzle database instance
-import { todos } from "@/data/db-schemas/todo-schema"; // Import the todos schema
+import { db } from "@/database";
+import { todos } from "@/data/db-schemas/todo-schema";
 import { eq, desc, and } from "drizzle-orm";
 
 export async function createTodo(title: string, userId: string) {
