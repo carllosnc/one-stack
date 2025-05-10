@@ -34,6 +34,12 @@ AUTH_GOOGLE_ID=""
 AUTH_GOOGLE_SECRET=""
 ```
 
+**Generate auth secret**
+
+```bash
+bunx auth secret
+```
+
 Google auth is the default auth provider.
 
 ## Development
