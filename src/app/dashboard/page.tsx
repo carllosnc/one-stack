@@ -1,4 +1,5 @@
 import { checkSession } from "@/lib/check-session"
+import { ListTodos, NewTodo } from "@/components/dashboard/new-todo"
 
 export default async function Dashboard() {
   const session = await checkSession()
@@ -7,8 +8,9 @@ export default async function Dashboard() {
   console.log(userId)
 
   return (
-    <div className="w-full min-h-screen gap-[20px] flex flex-col justify-center items-center">
-      <h1> Dashboard </h1>
+    <div className="w-full min-h-screen p-[20px]">
+      <NewTodo userId={userId} />
+      <ListTodos userId={userId} />
     </div>
   )
 }

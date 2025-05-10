@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useCreateTodo, useDeleteTodo, useTodos, useUpdateTodo } from "@/data/db-hooks/todo-hooks"
 import { InsertTodo } from "@/data/db-schemas/todo-schema"
+import { TrashIcon } from "lucide-react"
 
 export function NewTodo({ userId }: { userId: string }){
   const { mutate, isPending } = useCreateTodo()
@@ -10,7 +11,7 @@ export function NewTodo({ userId }: { userId: string }){
   const randomId = Math.floor(Math.random() * 1000)
 
   return (
-    <Button disabled={isPending} onClick={() => mutate({ title: `Todo - ${randomId}`, userId })}>
+    <Button className="mb-[20px]" disabled={isPending} onClick={() => mutate({ title: `Todo - ${randomId}`, userId })}>
       Create Todo {isPending && <span className="ml-2">⏳</span>}
     </Button>
   )
@@ -32,24 +33,28 @@ export function ListTodos({ userId }: { userId: string }){
     updateMutate({ id, userId, updates })
   }
 
-  return <div>
-    <h1>Todos</h1>
-    <ul>
+  return <div className="flex flex-col gap-[20px]">
+    <span>
+      {data?.length ? `Todos: ${data.length}` : "No todos"}
+    </span>
+
+    <ul className="flex flex-col gap-[10px]">
       {data?.map((todo) => (
-        <li key={todo.id} className="p-[10px] flex gap-[20px] bg-neutral-100 border border-neutral-400 w-[400px]">
+        <li key={todo.id} className="flex items-center gap-[20px]">
           <Button
+            size="icon"
             disabled={isPending}
-            className="bg-red-500"
             onClick={() => handleDelete(todo.id)}>
-            {isPending ? <span className="ml-2">⏳</span> : <span>Delete</span>}
+            {isPending ? <span className="ml-2">⏳</span> : <span><TrashIcon /></span>}
           </Button>
 
-          <Button
+          <input
+            type="checkbox"
+            checked={todo.completed}
             disabled={isPendingUpdate}
-            className="bg-green-600"
-            onClick={() => handleUpdate(todo.id, { completed: !todo.completed })}>
-            {isPendingUpdate ? <span className="ml-2">⏳</span> : <span>Complete</span>}
-          </Button>
+            onChange={() => handleUpdate(todo.id, { completed: !todo.completed })}
+            className="w-5 h-5 cursor-pointer"
+          />
 
           <span>{todo.title}</span>
           <span>{todo.completed ? "✅" : "❌"}</span>
